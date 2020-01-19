@@ -74,5 +74,5 @@ for x in range(9):
             winner = True
             break
         turno = "X"
-if winner:
+if not winner:
     print(f"\n === INFELIZMENTE!! NINGUEM GANHOU === ")
