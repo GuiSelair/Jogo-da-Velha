@@ -54,6 +54,7 @@ def inserir(escolha, turno):
         print("=== ERROR: Número errado. Perdeu a vez ===")
 
 # -------------- JOGO -----------------
+winner = False
 
 for x in range(9):
     mostraVelha()
@@ -63,14 +64,15 @@ for x in range(9):
         if verificaVitoria(turno):
             mostraVelha()
             print(f"\n=== PARABÉNS!! O jogador {turno} ganhou o jogo ===")
+            winner = True
             break
         turno = "O"
     else:
         if verificaVitoria(turno):
             mostraVelha()
             print(f"\n=== PARABÉNS!! O jogador {turno} ganhou o jogo ===")
+            winner = True
             break
         turno = "X"
-# BUG AQUI
-mostraVelha()
-print(f"\n=== INFELIZMENTE!! NINGUEM GANHOU === ")
+if winner:
+    print(f"\n === INFELIZMENTE!! NINGUEM GANHOU === ")
